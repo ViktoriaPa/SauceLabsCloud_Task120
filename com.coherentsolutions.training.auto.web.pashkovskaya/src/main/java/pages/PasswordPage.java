@@ -1,30 +1,29 @@
-package pageObgectPattern;
+package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static constans.LocatorsConstants.*;
-
-public class PasswordPage {
-    protected WebDriver driver;
+public class PasswordPage extends BasePage{
 
     public PasswordPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
-    public HomePage enterValidPassword(String password) {
-        WebElement passwordField = driver.findElement(PASSWORD_FIELD);
-        passwordField.sendKeys(password);
+    @FindBy(id = "passp-field-passwd") public WebElement passwordField;
+    @FindBy(id = "passp:sign-in") public WebElement logInButton;
 
-        WebElement loginButton = driver.findElement(LOGIN_BUTTON_ON_PASSWORD_PAGE);
-        loginButton.click();
+    public HomePage enterValidPassword(String password) {
+        passwordField.sendKeys(password);
+        logInButton.click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.pollingEvery(Duration.ofSeconds(2));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(USERNAME_ON_HOME_PAGE));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class=\"user-account__name\"]")));
 
         return new HomePage(driver);
     }

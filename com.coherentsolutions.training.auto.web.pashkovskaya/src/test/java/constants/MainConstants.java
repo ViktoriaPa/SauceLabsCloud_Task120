@@ -1,4 +1,4 @@
-package constans;
+package constants;
 
 public class MainConstants {
     public static final String LINK_TO_MAIN_YANDEX_PAGE = "https://mail.yandex.com";

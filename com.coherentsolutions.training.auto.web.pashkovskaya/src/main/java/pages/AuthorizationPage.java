@@ -1,12 +1,13 @@
-package pageObgectPattern;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class AuthorizationPage {
-    protected WebDriver driver;
+public class AuthorizationPage extends BasePage{
+
     public AuthorizationPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
+
     public String getTitle() {
         return driver.getTitle();
     }

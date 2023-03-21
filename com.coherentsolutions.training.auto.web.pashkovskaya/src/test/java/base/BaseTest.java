@@ -3,7 +3,7 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import singletonPattern.DriverInit;
+import util.DriverInit;
 
 public class BaseTest {
     private WebDriver driver;
