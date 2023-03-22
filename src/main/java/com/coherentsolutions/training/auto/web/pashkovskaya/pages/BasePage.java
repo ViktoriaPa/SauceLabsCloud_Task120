@@ -1,4 +1,4 @@
-package pages;
+package com.coherentsolutions.training.auto.web.pashkovskaya.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

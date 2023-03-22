@@ -1,4 +1,4 @@
-package constants;
+package com.coherentsolutions.training.auto.web.pashkovskaya.util;
 
 public class MainConstants {
     public static final String LINK_TO_MAIN_YANDEX_PAGE = "https://mail.yandex.com";

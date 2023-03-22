@@ -1,4 +1,4 @@
-package util;
+package com.coherentsolutions.training.auto.web.pashkovskaya.util;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,9 +14,10 @@ public class DriverInit {
 
     }
 
-    public static DriverInit getInstance() {
-        if (instanceDriver == null)
+    public synchronized static DriverInit getInstance() {
+        if (instanceDriver == null) {
             instanceDriver = new DriverInit();
+        }
         return instanceDriver;
     }
 

@@ -1,12 +1,17 @@
-package tests;
+package com.coherentsolutions.training.auto.web.pashkovskaya.tests;
 
-import base.BaseTest;
-import base.PageDriver;
+import com.coherentsolutions.training.auto.web.pashkovskaya.base.BaseTest;
+import com.coherentsolutions.training.auto.web.pashkovskaya.pages.AuthorizationPage;
+import com.coherentsolutions.training.auto.web.pashkovskaya.pages.HomePage;
+import com.coherentsolutions.training.auto.web.pashkovskaya.pages.PasswordPage;
+import com.coherentsolutions.training.auto.web.pashkovskaya.pages.SignInPage;
+import com.coherentsolutions.training.auto.web.pashkovskaya.pages.UserNamePage;
+import com.coherentsolutions.training.auto.web.pashkovskaya.util.PageDriver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.*;
 
-import static constants.MainConstants.*;
+import static com.coherentsolutions.training.auto.web.pashkovskaya.util.MainConstants.*;
 import static org.testng.Assert.assertEquals;
 
 public class TestLogOut extends BaseTest {

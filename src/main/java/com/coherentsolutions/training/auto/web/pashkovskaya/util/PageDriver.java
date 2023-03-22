@@ -1,4 +1,4 @@
-package base;
+package com.coherentsolutions.training.auto.web.pashkovskaya.util;
 
 import org.openqa.selenium.WebDriver;
 
