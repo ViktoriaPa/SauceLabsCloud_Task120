@@ -9,7 +9,6 @@ import com.coherentsolutions.training.auto.web.pashkovskaya.pages.UserNamePage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.util.PageDriver;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pages.*;
 
 import static com.coherentsolutions.training.auto.web.pashkovskaya.util.MainConstants.*;
 import static org.testng.Assert.assertEquals;
