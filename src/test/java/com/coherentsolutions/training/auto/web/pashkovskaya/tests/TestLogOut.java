@@ -7,8 +7,11 @@ import com.coherentsolutions.training.auto.web.pashkovskaya.pages.PasswordPage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.pages.SignInPage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.pages.UserNamePage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.util.PageDriver;
+import com.coherentsolutions.training.auto.web.pashkovskaya.util.Screenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 import static com.coherentsolutions.training.auto.web.pashkovskaya.util.MainConstants.*;
 import static org.testng.Assert.assertEquals;
@@ -16,7 +19,7 @@ import static org.testng.Assert.assertEquals;
 public class TestLogOut extends BaseTest {
 
     @Test
-    public void testLogOut() throws InterruptedException {
+    public void testLogOut() throws InterruptedException, IOException {
         WebDriver driver = PageDriver.getDriver();
         driver.get(LINK_TO_MAIN_YANDEX_PAGE);
         Thread.sleep(20000);
@@ -25,6 +28,7 @@ public class TestLogOut extends BaseTest {
         UserNamePage userNamePage = signInPage.openUserNamePage();
         PasswordPage passwordPage = userNamePage.enterValidUsername(USERNAME);
         HomePage homePage = passwordPage.enterValidPassword(PASSWORD);
+        Screenshot.takeScreenshot(driver);
         AuthorizationPage authorizationPage = homePage.logOut();
         Thread.sleep(20000);
         assertEquals(authorizationPage.getTitle(),"Authorization", "Title mismatch");
