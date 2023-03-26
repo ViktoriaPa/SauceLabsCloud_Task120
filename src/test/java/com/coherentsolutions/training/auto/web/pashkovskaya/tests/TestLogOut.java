@@ -7,7 +7,7 @@ import com.coherentsolutions.training.auto.web.pashkovskaya.pages.PasswordPage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.pages.SignInPage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.pages.UserNamePage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.util.PageDriver;
-import com.coherentsolutions.training.auto.web.pashkovskaya.util.Screenshot;
+import com.coherentsolutions.training.auto.web.pashkovskaya.util.Screenshots;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -28,7 +28,8 @@ public class TestLogOut extends BaseTest {
         UserNamePage userNamePage = signInPage.openUserNamePage();
         PasswordPage passwordPage = userNamePage.enterValidUsername(USERNAME);
         HomePage homePage = passwordPage.enterValidPassword(PASSWORD);
-        Screenshot.takeScreenshot(driver);
+        Screenshots.takeScreenshot(driver);
+        Screenshots.takeScreenshotFullScreen(driver);
         AuthorizationPage authorizationPage = homePage.logOut();
         Thread.sleep(20000);
         assertEquals(authorizationPage.getTitle(),"Authorization", "Title mismatch");

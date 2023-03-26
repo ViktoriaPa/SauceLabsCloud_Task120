@@ -2,7 +2,7 @@ package com.coherentsolutions.training.auto.web.pashkovskaya.tests;
 
 import com.coherentsolutions.training.auto.web.pashkovskaya.base.BaseTest;
 import com.coherentsolutions.training.auto.web.pashkovskaya.util.PageDriver;
-import com.coherentsolutions.training.auto.web.pashkovskaya.util.Screenshot;
+import com.coherentsolutions.training.auto.web.pashkovskaya.util.Screenshots;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import com.coherentsolutions.training.auto.web.pashkovskaya.pages.HomePage;
@@ -27,7 +27,8 @@ public class TestLogIn extends BaseTest {
         PasswordPage passwordPage = userNamePage.enterValidUsername(USERNAME);
         HomePage homePage = passwordPage.enterValidPassword(PASSWORD);
 
-        Screenshot.takeScreenshot(driver);
+        Screenshots.takeScreenshot(driver);
+        Screenshots.takeScreenshotFullScreen(driver);
 
         assertEquals(homePage.getMessageText(), USERNAME, "UserName mismatch");
     }
