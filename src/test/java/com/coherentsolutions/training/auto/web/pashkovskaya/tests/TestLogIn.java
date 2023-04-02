@@ -1,9 +1,11 @@
 package com.coherentsolutions.training.auto.web.pashkovskaya.tests;
 
 import com.coherentsolutions.training.auto.web.pashkovskaya.base.BaseTest;
+import com.coherentsolutions.training.auto.web.pashkovskaya.util.TestAllureListener;
 import com.coherentsolutions.training.auto.web.pashkovskaya.util.PageDriver;
 import com.coherentsolutions.training.auto.web.pashkovskaya.util.Screenshots;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.coherentsolutions.training.auto.web.pashkovskaya.pages.HomePage;
 import com.coherentsolutions.training.auto.web.pashkovskaya.pages.PasswordPage;
@@ -14,9 +16,9 @@ import java.io.IOException;
 
 import static com.coherentsolutions.training.auto.web.pashkovskaya.util.MainConstants.*;
 import static org.testng.Assert.assertEquals;
-
+@Listeners({ TestAllureListener.class })
 public class TestLogIn extends BaseTest {
-    @Test
+    @Test(groups = {"LogIn"}, description = "Login test with valid username and valid password")
     public void testLogin() throws InterruptedException, IOException {
         WebDriver driver = PageDriver.getDriver();
         driver.get(LINK_TO_MAIN_YANDEX_PAGE);
