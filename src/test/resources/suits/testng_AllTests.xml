@@ -5,7 +5,7 @@
     <listeners>
         <listener class-name="com.coherentsolutions.training.auto.web.pashkovskaya.util.TestAllureListener"></listener>
     </listeners>
-    <test name="AllTests">
+    <test name="AllTests" parallel="classes">
         <classes>
             <class name="com.coherentsolutions.training.auto.web.pashkovskaya.tests.TestLogOut"></class>
             <class name="com.coherentsolutions.training.auto.web.pashkovskaya.tests.TestLogIn"></class>
